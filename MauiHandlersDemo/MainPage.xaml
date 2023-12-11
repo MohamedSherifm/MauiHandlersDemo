@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiHandlersDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:MauiHandlersDemo.CustomControls">
+
+    <Grid RowDefinitions="*,*,*">
+        <!--<controls:Draw
+            x:Name="drawCanvas"
+            DrawColor="Purple"
+            IsVisible="false" />-->
+        <controls:MaterialEntry
+            PlaceHolder="Hello"
+            TextColor="Green"
+            WidthRequest="200" />
+
+        <StackLayout Grid.Row="1">
+            <Entry ClearButtonVisibility="WhileEditing" Placeholder="Type Here" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="2">
+            <Button Clicked="Button_Clicked" Text="Clear" />
+            <Button Clicked="Save_Button_Clicked" Text="Save" />
+        </StackLayout>
+
+    </Grid>
+</ContentPage>
