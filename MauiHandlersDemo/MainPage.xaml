@@ -11,6 +11,7 @@
             DrawColor="Purple"
             IsVisible="false" />-->
         <controls:MaterialEntry
+            Margin="8"
             PlaceHolder="Hello"
             TextColor="Green"
             WidthRequest="200" />

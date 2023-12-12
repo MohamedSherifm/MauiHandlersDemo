@@ -1,10 +1,5 @@
 ﻿using MauiHandlersDemo.CustomControls;
 using Microsoft.Maui.Handlers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MauiHandlersDemo.Handlers
 {
@@ -16,7 +11,8 @@ namespace MauiHandlersDemo.Handlers
         {
             if (m_materialEntry == null) 
             {
-                m_materialEntry = new MaterialEntryAndroid(Context, null, 2000660);
+                m_materialEntry = new MaterialEntryAndroid(Context, null, Resource.Style.Widget_Material3_TextInputLayout_FilledBox_Dense);
+                //m_materialEntry = new MaterialEntryAndroid(Context);
             }
 
             return m_materialEntry;
