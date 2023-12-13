@@ -32,6 +32,7 @@ namespace MauiHandlersDemo
             textInputLayoutLayoutParams = new(LayoutParams.MatchParent, LayoutParams.WrapContent);
             this.LayoutParameters = textInputLayoutLayoutParams;
             BoxBackgroundMode = TextInputLayout.BoxBackgroundOutline;
+            BoxStrokeColor = Resource.Color.m3_textfield_stroke_color;
             SetBoxCornerRadii(12, 12, 12, 12);      
             //CounterMaxLength = 10;
             //CounterEnabled = true;

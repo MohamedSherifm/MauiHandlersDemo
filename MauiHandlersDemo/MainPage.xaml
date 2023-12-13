@@ -3,24 +3,65 @@
     x:Class="MauiHandlersDemo.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:MauiHandlersDemo.CustomControls">
+    xmlns:controls="clr-namespace:MauiHandlersDemo.CustomControls"
+    xmlns:models="clr-namespace:MauiHandlersDemo.Models"
+    xmlns:viewmodels="clr-namespace:MauiHandlersDemo.ViewModels"
+    x:DataType="viewmodels:MainViewModel">
 
-    <Grid RowDefinitions="*,*,*">
-        <!--<controls:Draw
+    <Grid RowDefinitions="auto,*">
+        <controls:Draw
             x:Name="drawCanvas"
             DrawColor="Purple"
-            IsVisible="false" />-->
+            IsVisible="false" />
         <controls:MaterialEntry
+            Grid.Row="0"
             Margin="8"
             PlaceHolder="Hello"
-            TextColor="Green"
+            TextColor="{Binding SelectedColor.TextColor}"
             WidthRequest="200" />
 
-        <StackLayout Grid.Row="1">
-            <Entry ClearButtonVisibility="WhileEditing" Placeholder="Type Here" />
-        </StackLayout>
 
-        <StackLayout Grid.Row="2">
+        <CollectionView
+            Grid.Row="1"
+            ItemsSource="{Binding MyColors}"
+            SelectedItem="{Binding SelectedColor}"
+            SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:TextColorModel">
+                    <Border
+                        Margin="4"
+                        Stroke="Black"
+                        StrokeShape="RoundRectangle 10">
+                        <Grid
+                            Padding="4"
+                            ColumnDefinitions="3*,*"
+                            HeightRequest="70">
+                            <Label Text="{Binding Name}" VerticalOptions="Center" />
+                            <Border
+                                Grid.Column="1"
+                                BackgroundColor="{Binding TextColor}"
+                                StrokeShape="RoundRectangle 10" /> 
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!--<Picker
+            Title="Select Colors"
+            Grid.Row="2"
+            HeightRequest="60"
+            IsVisible="false"
+            ItemDisplayBinding="{Binding Name}"
+            ItemsSource="{Binding MyColors}"
+            SelectedItem="{Binding SelectedColor}" />-->
+
+
+        <StackLayout
+            Grid.Row="3"
+            Margin="4,0"
+            IsVisible="false"
+            Spacing="8">
             <Button Clicked="Button_Clicked" Text="Clear" />
             <Button Clicked="Save_Button_Clicked" Text="Save" />
         </StackLayout>

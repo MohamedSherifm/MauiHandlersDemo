@@ -61,7 +61,7 @@ namespace MauiHandlersDemo.Handlers
 
         protected override void DisconnectHandler(PlatformView platformView)
         {
-            PlatformView.Dispose();
+            //PlatformView.Dispose();
             base.DisconnectHandler(platformView);
         }
 

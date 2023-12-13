@@ -1,5 +1,6 @@
 ﻿using MauiHandlersDemo.CustomControls;
 using MauiHandlersDemo.Handlers;
+using MauiHandlersDemo.ViewModels;
 using Microsoft.Extensions.Logging;
 
 namespace MauiHandlersDemo
@@ -26,6 +27,8 @@ namespace MauiHandlersDemo
     		builder.Logging.AddDebug();
 #endif
 
+            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<MainPage>();
             return builder.Build();
         }
     }

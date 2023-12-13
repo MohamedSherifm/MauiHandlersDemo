@@ -11,7 +11,7 @@ namespace MauiHandlersDemo.Handlers
         {
             if (m_materialEntry == null) 
             {
-                m_materialEntry = new MaterialEntryAndroid(Context, null, Resource.Style.Widget_Material3_TextInputLayout_FilledBox_Dense);
+                m_materialEntry = new MaterialEntryAndroid(Context, null, Resource.Style.Widget_Material3_TextInputLayout_OutlinedBox);
                 //m_materialEntry = new MaterialEntryAndroid(Context);
             }
 

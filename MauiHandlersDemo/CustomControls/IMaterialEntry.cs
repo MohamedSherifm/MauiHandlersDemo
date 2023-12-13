@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace MauiHandlersDemo.CustomControls
 {
-    public interface IMaterialEntry : IView
+    public interface IMaterialEntry : IEntry
     {
         string PlaceHolder { get; set; }
-        Color TextColor { get; set; }
+        //Color TextColor { get; set; }
         void Clear();
     }
 }
