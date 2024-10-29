@@ -16,10 +16,17 @@
         <controls:MaterialEntry
             Grid.Row="0"
             Margin="8"
+            IsVisible="false"
             PlaceHolder="Hello"
             TextColor="{Binding SelectedColor.TextColor}"
             WidthRequest="200" />
 
+        <!--<controls:SwitchMaterial IsEnabled="True" />-->
+        <controls:EntryIcon
+            Margin="4"
+            StartIconGlyph="&#xf007;"
+            Stroke="Green"
+            StrokeThickness="5" />
 
         <CollectionView
             Grid.Row="1"
@@ -40,12 +47,13 @@
                             <Border
                                 Grid.Column="1"
                                 BackgroundColor="{Binding TextColor}"
-                                StrokeShape="RoundRectangle 10" /> 
+                                StrokeShape="RoundRectangle 10" />
                         </Grid>
                     </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
 
         <!--<Picker
             Title="Select Colors"
